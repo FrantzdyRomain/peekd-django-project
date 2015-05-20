@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form ignore-password" method="post" action="">
+      {% csrf_token %}
+     
+
+  
+    
+
+      {{ form.avatar }}
+      {{ form.name }}
+      {{ form.website }}
+      {{ form.bio }}
+     
+      <input type="submit" value="Submit" />
+</form>
+{% endblock %}

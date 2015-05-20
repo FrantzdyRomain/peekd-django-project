@@ -1,0 +1,12 @@
+{% block content %}
+
+{% if item.owner %}
+    {{ item.owner }}
+{% endif %}
+
+{{ item.name }}
+<p><img src="{{ item.get_absolute_url }}" /></p>
+{{ item.description }}
+{{ item.price }}
+
+{% endblock %}

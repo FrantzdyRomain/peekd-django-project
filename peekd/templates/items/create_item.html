@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="">
+  <h2>Submit your Item</h2>
+  <form class="form" method="post" action="{% url items.views.snippet_new %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+  </form>	
+</div>
+
+{% endblock %}

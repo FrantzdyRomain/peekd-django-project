@@ -1,0 +1,12 @@
+from django.conf.urls.defaults import patterns, url
+from django.conf import settings
+from items.views import *
+from items import views as itemview
+ 
+urlpatterns = patterns('',
+    url('^create/$', itemview.item_process),
+    url(r'^(?P<item_id>[a-zA-Z0-9]{4})/$', itemview.item_details, name='item_details'),
+
+
+)
+ 

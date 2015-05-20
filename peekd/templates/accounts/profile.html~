@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{% if my_profile %}My profile{% else %}Profile of {{userprofile.username}}{% endif %}</h1> 
+	<p><img src="{{ userprofile.avatar.url }}" /></p>
+    <a href="/profile/upload">Change or upload a profile picture</a> <!-- Need to make this a popup :) -->
+    <p>Name: {{ userprofile.name }}</p>
+	<p> Website: {{ userprofile.website }}</p>
+	<p>About me: {{ userprofile.bio }}</p>
+    
+
+{% endblock %}

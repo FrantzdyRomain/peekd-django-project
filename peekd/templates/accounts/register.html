@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!--<form class="form" method="POST" action="{% url accounts.views.signup %}" enctype="multipart/form-data"> -->
+<form class="form" method="post" action="">
+ {% csrf_token %}
+ {% if form.errors %}<div class="errors"><p>Correct these errors</p1></div>{% endif %}
+ <div class="register_div">
+	{% if form.username.errors %}<p class="errors"> {{ form.username.errors }}</p>{% endif %}
+	<p><label for="username" {% if form.username.errors %}class="errors" {% endif %}>Username:</label></p>
+	<p>{{ form.username }}</p>
+
+</div>
+
+ <div class="register_div">
+        {% if form.email.errors %}<p class="errors"> {{ form.email.errors }}</p>{% endif %}
+        <p><label for="email" {% if form.email.errors %}class="errors" {% endif %}>Email:</label></p>
+        <p>{{ form.email }}</p>
+ 
+</div>
+
+ <div class="register_div">
+        {% if form.password.errors %}<p class="errors"> {{ form.password.errors }}</p>{% endif %}
+        <p><label for="password" {% if form.password.errors %}class="errors" {% endif %}>Password:</label></p>
+        <p>{{ form.password }}</p>
+ 
+</div>
+
+
+<div class="register_div">
+        {% if form.password1.errors %}<p class="errors"> {{ form.password1.errors }}</p>{% endif %}
+        <p><label for="password1" {% if form.password1.errors %}class="errors" {% endif %}>Verify Password:</label></p>
+        <p>{{ form.password1 }}</p>
+
+</div>
+<p><input type="submit" value="Register" /></p>
+</form>
+{% endblock %}
